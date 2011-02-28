@@ -2,7 +2,7 @@
   <%= f.error_messages %>
   <p>
     <%= f.label :party_type_id %><br />
-    <%= f.text_field :party_type_id %>
+    <%= f.collection_select :party_type_id, PartyType.all, :id, :name, :prompt => "Select ..." %>
   </p>
   <p>
     <%= f.label :host_id %><br />

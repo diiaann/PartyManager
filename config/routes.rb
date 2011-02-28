@@ -2,35 +2,23 @@ PartyManager::Application.routes.draw do
 
 
   get "home/index"
-
   get "home/about"
-
   get "home/contact"
-
   get "home/privacy"
 
   resources :party_types
-
   resources :parties
-
   resources :locations
-
   resources :invitations
-
   resources :guests
-
   resources :gifts
 
   match 'host/edit' => 'hosts#edit', :as => :edit_current_host
-
   match 'signup' => 'hosts#new', :as => :signup
-
   match 'logout' => 'sessions#destroy', :as => :logout
-
   match 'login' => 'sessions#new', :as => :login
 
   resources :sessions
-
   resources :hosts
   
   root :to => 'home#index'
