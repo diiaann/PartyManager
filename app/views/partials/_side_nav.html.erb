@@ -1,0 +1,21 @@
+<div id="side_nav">
+
+	<h3>Options:</h3>
+	
+	<ul>
+	<!-- OPTIONS FOR EVERYONE -->
+
+		<li><%= link_to 'Parties', parties_path%></li>
+		<li><%= link_to 'Guests', guests_path%></li>
+		<li><%= link_to 'Invitations', invitations_path%></li>
+		<li><%= link_to 'Locations', locations_path%></li>
+		<li><%= link_to 'Party Types', party_types_path%></li>
+		<li><%= link_to 'Gifts', gifts_path%></li>
+		<!-- can set this manually, or just use the named route 'logout' -->
+		<li>
+			<%# link_to 'Logout', { :controller => :sessions, :action => :destroy } %>
+			<%= link_to 'Logout', logout_path %>
+		</li>
+	</ul>
+	<p>&nbsp;</p>
+</div>

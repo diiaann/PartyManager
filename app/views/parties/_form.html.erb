@@ -3,22 +3,20 @@
   <p>
     <%= f.label :party_type_id %><br />
     <%= f.collection_select :party_type_id, PartyType.all, :id, :name, :prompt => "Select ..." %>
-  </p>
-  <p>
-    <%= f.label :host_id %><br />
-    <%= f.text_field :host_id %>
-  </p>
+ </p>
+
   <p>
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </p>
   <p>
     <%= f.label :location_id %><br />
-    <%= f.text_field :location_id %>
+    <%# f.text_field :location_id %>
+	<%= f.collection_select :location_id, Location.all, :id, :name, :prompt => "Select ..."%>
   </p>
   <p>
-    <%= f.label :date %><br />
-    <%= f.date_select :date %>
+    <%= f.label :party_date %><br />
+    <%= f.date_select :party_date, :order => [:month, :day, :year],:start_year => Time.now.year%>
   </p>
   <p>
     <%= f.label :start_time %><br />

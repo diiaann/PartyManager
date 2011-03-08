@@ -1,9 +1,6 @@
 <%= form_for @location do |f| %>
   <%= f.error_messages %>
-  <p>
-    <%= f.label :host_id %><br />
-    <%= f.text_field :host_id %>
-  </p>
+
   <p>
     <%= f.label :name %><br />
     <%= f.text_field :name %>
@@ -18,7 +15,7 @@
   </p>
   <p>
     <%= f.label :state %><br />
-    <%= f.text_field :state %>
+	<%= f.select(:state, Location::STATES_LIST) %>
   </p>
   <p>
     <%= f.label :zip %><br />

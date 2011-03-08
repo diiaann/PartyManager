@@ -1,6 +1,20 @@
 class GiftsController < ApplicationController
+  before_filter :login_required
+  
+
+  
   def index
-    @gifts = Gift.all
+    @gifts = currentGifts()
+  end
+  
+  def currentGifts
+    a = Array.new
+    for gft in Gift.all
+      if (current_host.invitations.all.include?(gft.invitation_id))
+        a.push(gft)
+      end
+    end
+    return a
   end
 
   def show

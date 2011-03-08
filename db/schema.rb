@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(:version => 20110227203227) do
     t.integer  "host_id"
     t.string   "name"
     t.integer  "location_id"
-    t.date     "date"
+    t.date     "party_date"
     t.time     "start_time"
     t.time     "end_time"
     t.text     "description"

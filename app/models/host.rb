@@ -5,6 +5,9 @@ class Host < ActiveRecord::Base
   has_many :guests
   has_many :parties
   has_many :locations
+  has_many :party_types, :through  => :parties
+  has_many :invitations, :through => :guests
+  has_many :gifts, :through => :guests
   
   attr_accessor :password
   before_save :prepare_password

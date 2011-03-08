@@ -1,6 +1,7 @@
 class InvitationsController < ApplicationController
+  before_filter :login_required
   def index
-    @invitations = Invitation.all
+    @invitations = current_host.invitations.all
   end
 
   def show
@@ -38,4 +39,5 @@ class InvitationsController < ApplicationController
     @invitation.destroy
     redirect_to invitations_url, :notice => "Successfully destroyed invitation."
   end
+  
 end

@@ -21,6 +21,12 @@ PartyManager::Application.routes.draw do
   resources :sessions
   resources :hosts
   
+  match 'home' => 'home#index', :as => :home
+  match 'about' => 'home#about', :as => :about
+  match 'contact' => 'home#contact', :as => :contact
+  match 'privacy' => 'home#privacy', :as => :privacy
+  match 'search' => 'home#search', :as => :search
+  
   root :to => 'home#index'
 
   # The priority is based upon order of creation:

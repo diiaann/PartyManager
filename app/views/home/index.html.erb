@@ -1,4 +1,7 @@
-<h1>Party Manager</h1>
 <% unless current_host %>
-	<p>Sign up <%= link_to "click here to login.", login_path %></p>
-<% end %>
+<p>Sign up <%= link_to "click here to login.", login_path %></p>
+<%end%>
+
+<%if current_host%>
+<h2>Welcome <%="#{current_host.first_name}"%> <%="#{current_host.last_name}"%></h2>
+<%end%>

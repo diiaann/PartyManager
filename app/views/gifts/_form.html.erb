@@ -2,7 +2,7 @@
   <%= f.error_messages %>
   <p>
     <%= f.label :invitation_id %><br />
-    <%= f.text_field :invitation_id %>
+	<%= f.select :invitation_id, get_invite_options, :prompt => "Select ..." %>
   </p>
   <p>
     <%= f.label :note_sent_on %><br />
