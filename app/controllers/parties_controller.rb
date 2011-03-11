@@ -1,12 +1,23 @@
 class PartiesController < ApplicationController
   before_filter :login_required
   def index
+    #lists only the logged in hosts parties
     @parties = current_host.parties.all
     
   end
 
   def show
     @party = Party.find(params[:id])
+    @current_guests = @party.guests.all
+  end
+  def partyGuests
+    a = Array.new
+      for guest in current_host.guests.all
+        if(guest.party_id==@party.id)
+          a.push(guest)
+        end
+      end
+    return a
   end
 
   def new
@@ -15,6 +26,7 @@ class PartiesController < ApplicationController
 
   def create
     @party = Party.new(params[:party])
+    #sets the host_id to the logged in hosts id
     @party.host_id = current_host.id
     if @party.save
       redirect_to @party, :notice => "Successfully created party."

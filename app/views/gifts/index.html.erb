@@ -1,14 +1,17 @@
 <% title "Gifts" %>
 
-<table>
-  <tr>
-    <th>Invitation</th>
+<table class="tbl">
+  <thead class="tbl">
+    <th>Guest Name </th>
     <th>Note Sent On</th>
     <th>Description</th>
-  </tr>
+	<th></th>
+	<th></th>
+	<th></th>
+  </thead>
   <% for gift in @gifts %>
     <tr>
-      <td><%= gift.invitation_id %></td>
+      <td><%= gift.invitation.guest.name %></td>
       <td><%= gift.note_sent_on %></td>
       <td><%= gift.description %></td>
       <td><%= link_to "Show", gift %></td>

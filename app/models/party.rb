@@ -5,4 +5,6 @@ class Party < ActiveRecord::Base
   has_many :invitations
   belongs_to :party_type
   belongs_to :location
+  belongs_to :host
+  has_many :guests, :through => :invitations
 end

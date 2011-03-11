@@ -1,6 +1,7 @@
 class LocationsController < ApplicationController
   before_filter :login_required
   def index
+    #lists only the logged in hosts locations
     @locations = current_host.locations.all
   end
 
@@ -14,6 +15,7 @@ class LocationsController < ApplicationController
 
   def create
     @location = Location.new(params[:location])
+    #sets the host_id to the currrent logged in hosts id
     @location.host_id = current_host.id
     if @location.save
       redirect_to @location, :notice => "Successfully created location."

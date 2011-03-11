@@ -1,6 +1,7 @@
 class GuestsController < ApplicationController
   before_filter :login_required
   def index
+    #only lists the current hosts guests
     @guests = current_host.guests.all
   end
 
@@ -14,6 +15,7 @@ class GuestsController < ApplicationController
 
   def create
     @guest = Guest.new(params[:guest])
+    #auto sets the current hosts id
     @guest.host_id = current_host.id
     if @guest.save
       redirect_to @guest, :notice => "Successfully created guest."

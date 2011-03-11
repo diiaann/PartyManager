@@ -1,18 +1,19 @@
 <% title "Invitations" %>
 
-<table>
-  <tr>
+<table class="tbl">
+  <thead class="tbl">
     <th>Party</th>
     <th>Guest</th>
-    <th>Invite Code</th>
     <th>Expected Attendees</th>
     <th>Actual Attendees</th>
-  </tr>
+	<th></th>
+	<th></th>
+	<th></th>
+  </thead>
   <% for invitation in @invitations %>
     <tr>
-      <td><%= invitation.party_id %></td>
-      <td><%= invitation.guest_id %></td>
-      <td><%= invitation.invite_code %></td>
+      <td><%= invitation.party.name %></td>
+      <td><%= invitation.guest.name %></td>
       <td><%= invitation.expected_attendees %></td>
       <td><%= invitation.actual_attendees %></td>
       <td><%= link_to "Show", invitation %></td>

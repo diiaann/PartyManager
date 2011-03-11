@@ -1,9 +1,8 @@
 <% title "Parties" %>
 
-<table>
-  <tr>
+<table class ="tbl">
+  <thead class ="tbl">
     <th>Party Type</th>
-    <th>Host</th>
     <th>Name</th>
     <th>Location</th>
     <th>Date</th>
@@ -11,18 +10,20 @@
     <th>End Time</th>
     <th>Description</th>
     <th>Rsvp Date</th>
-  </tr>
+	<th></th>
+	<th></th>
+	<th></th>
+  </thead>
   <% for party in @parties %>
     <tr>
-      <td><%= party.party_type_id %></td>
-      <td><%= party.host_id %></td>
+      <td><%= party.party_type.name %></td>
       <td><%= party.name %></td>
-      <td><%= party.location_id %></td>
-      <td><%= party.party_date %></td>
-      <td><%= party.start_time %></td>
-      <td><%= party.end_time %></td>
+      <td><%= party.location.name %></td>
+      <td><%= party.party_date.strftime("%m/%d/%y") %></td>
+      <td><%= party.start_time.strftime("%a,%l:%M%p") %></td>
+      <td><%= party.end_time.strftime("%a,%l:%M%p") %></td>
       <td><%= party.description %></td>
-      <td><%= party.rsvp_date %></td>
+      <td><%= party.rsvp_date.strftime("%m/%d/%y") %></td>
       <td><%= link_to "Show", party %></td>
       <td><%= link_to "Edit", edit_party_path(party) %></td>
       <td><%= link_to "Destroy", party, :confirm => 'Are you sure?', :method => :delete %></td>

@@ -1,8 +1,7 @@
 <% title "Locations" %>
 
-<table>
-  <tr>
-    <th>Host</th>
+<table class="tbl">
+  <thead class="tbl">
     <th>Name</th>
     <th>Street</th>
     <th>City</th>
@@ -10,10 +9,12 @@
     <th>Zip</th>
     <th>Latitude</th>
     <th>Longitude</th>
-  </tr>
+	<th></th>
+	<th></th>
+	<th></th>
+  </thead>
   <% for location in @locations %>
     <tr>
-      <td><%= location.host_id %></td>
       <td><%= location.name %></td>
       <td><%= location.street %></td>
       <td><%= location.city %></td>

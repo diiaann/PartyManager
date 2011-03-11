@@ -1,23 +1,25 @@
 <% title "Guests" %>
 
-<table>
-  <tr>
-    <th>Host</th>
-    <th>Name</th>
-    <th>Email</th>
-    <th>Notes</th>
-  </tr>
-  <% for guest in @guests %>
-    <tr>
-      <td><%= guest.host_id %></td>
-      <td><%= guest.name %></td>
-      <td><%= guest.email %></td>
-      <td><%= guest.notes %></td>
-      <td><%= link_to "Show", guest %></td>
-      <td><%= link_to "Edit", edit_guest_path(guest) %></td>
-      <td><%= link_to "Destroy", guest, :confirm => 'Are you sure?', :method => :delete %></td>
-    </tr>
-  <% end %>
-</table>
+<table class ="tbl">
+	<thead class="tbl">
+		<th>Name</th>
+		<th>Email</th>
+		<th>Notes</th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</thead>
+	<% for guest in @guests %>
+	<tr>
+		<tr class="<%=cycle('dg_list_line_odd', 'dg_list_line_even') %>">
+			<td><%= guest.name %></td>
+			<td><%= guest.email %></td>
+			<td><%= guest.notes %></td>
+			<td><%= link_to "Show", guest %></td>
+			<td><%= link_to "Edit", edit_guest_path(guest) %></td>
+			<td><%= link_to "Destroy", guest, :confirm => 'Are you sure?', :method => :delete %></td>
+		</tr>
+		<% end %>
+	</table>
 
-<p><%= link_to "New Guest", new_guest_path %></p>
+	<p><%= link_to "New Guest", new_guest_path %></p>

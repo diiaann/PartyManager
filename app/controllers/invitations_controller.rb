@@ -1,6 +1,7 @@
 class InvitationsController < ApplicationController
   before_filter :login_required
   def index
+    #lists only the logged in hosts invitations
     @invitations = current_host.invitations.all
   end
 

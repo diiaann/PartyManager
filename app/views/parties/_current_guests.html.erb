@@ -1,0 +1,13 @@
+<h2>Current Guests</h3>
+	<table class="tbl">
+		<thead class="tbl">
+			<th>Name</th>
+			<th>Notes</th>
+		</thead>
+	<% for guest in @current_guests%>
+	<tr>
+		<td><%=link_to guest.name, guest_path(guest)%></td>
+		<td><%=guest.notes%></td>
+	</tr>
+	<%end%>
+	</table>

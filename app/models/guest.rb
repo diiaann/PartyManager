@@ -5,6 +5,7 @@ class Guest < ActiveRecord::Base
   belongs_to :host
   has_many :invitations
   has_many :gifts, :through => :invitations
+  has_many :parties, :through => :invitations
   
   #Scopes
   scope :all, order('name')

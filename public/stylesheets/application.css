@@ -1,12 +1,17 @@
+table.grid {
+	text-align: left;
+	border-collapse: collapse;
+}
+
 body {
-	background-color: #C4FF8A;
+	background-color: #ABFFF9;
 	font-family: "GillSans-Light",Verdana, Helvetica, Arial;
 	font-size: 12px;
 }
 #header{
 	height: 45px;
 	text-align: center;
-	font-family: "GillSans-Light";
+	font-family: "GillSans-Light",Verdana, Helvetica, Arial;
 	font-size: 30px;
 	font-color: #3165CA;
 }
@@ -19,20 +24,25 @@ body {
 #side_nav{
 	list-style-type: none;
 	width: 150px;
+	font-color: #ffffff;
+	
 }
 #side_nav ul{
 	list-style-type: none;
 }
+#side_nav ul li a:link{
+	font-color: #31E868;
+}
 #side_nav a{
 	text-decoration: none;
-	font-color: #31E868;
+	color: #FF3A3B;
 }
 #side_nav a:link, #side_nav a:visited {
 	text-decoration: none;
 }
 #side_nav a:hover{
 	text-decoration: none;
-	font-color: #31E868;
+	color: #FFC129;
 }
 #sude_nav li {
 	list-style-type: none;
@@ -118,3 +128,29 @@ a {
 	text-align:center;
 	font-size: 93%;
 }
+
+/* ldkja */
+table.tbl {   
+	font-size: 90%;
+	color: #000000;
+	text-align: left;
+}
+
+table.tbl a {
+	text-decoration: none;
+	color: #FF3A3B;
+}
+table.tbl a:hover {
+	color: #FF8400;
+}
+
+
+thead.tbl th {
+	font-size: 105%;
+	color: black;
+	background-color: #B2CFE8;
+	height: 28px;
+	font-weight: bold;
+	padding: 10px;
+}
+
