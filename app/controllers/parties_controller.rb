@@ -7,6 +7,7 @@ class PartiesController < ApplicationController
 
   def show
     @party = Party.find(params[:id])
+    @current_guests = @party.guests.all
   end
 
   def new

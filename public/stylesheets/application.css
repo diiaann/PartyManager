@@ -1,16 +1,15 @@
 body {
 	background-color: #C4FF8A;
-	font-family: "GillSans-Light",Verdana, Helvetica, Arial;
+	font-family: "Raleway-Thin",Verdana, Helvetica, Arial;
 	font-size: 12px;
 }
 #header{
 	height: 45px;
 	text-align: center;
-	font-family: "GillSans-Light";
+	font-family: "Raleway-Thin";
 	font-size: 30px;
 	font-color: #3165CA;
 }
-
 
 #wrap {
 	width: 30%;

@@ -10,7 +10,8 @@ class Invitation < ActiveRecord::Base
   
   #Validations
   validates_numericality_of :expected_attendees, :only_integer => true, :greater_than => 0
-  
+  validates_numericality_of :guest_id
+  validates_presence_of :guest_id
   #Callback
   protected
     def add_invite_code

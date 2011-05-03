@@ -12,5 +12,5 @@
     <%= f.label :expected_attendees %><br />
     <%= f.text_field :expected_attendees %>
   </p>
-  <p><%= f.submit %></p>
+  <p><%= f.submit (@invitation.new_record? ? "Create" : "Update") %></p>
 <% end %>
