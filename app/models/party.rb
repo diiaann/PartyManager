@@ -20,7 +20,14 @@ class Party < ActiveRecord::Base
 
   validates_date :rsvp_date, :allow_blank=>true, :on_or_before => :party_date,
   :before_message => "Rsvp date must be on or before"
-
+  
+  
+  def create_map_link(zoom=13, width=800, height=800)
+    self.location.find_location_coordinates
+    markers = "";
+    markers +=  "&markers=color:red%7Ccolor:red%7Clabel:#{name}%7C#{location.latitude},#{location.longitude}"
+    map = "http://maps.google.com/maps/api/staticmap?center=#{location.latitude},#{location.longitude}&zoom=#{zoom}&size=#{width}x#{height}&maptype=roadmap#{markers}&sensor=false"
+  end
 
   def expected
     return self.invitations.sum('expected_attendees')

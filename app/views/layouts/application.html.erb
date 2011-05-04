@@ -3,37 +3,25 @@
 <head>
 	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
 	<%= stylesheet_link_tag "application" %>
-	<%= javascript_include_tag :defaults %>
+	<%= javascript_include_tag 'jquery.min', 'jquery-ui.min', 'rails', 'application', 'nested_form', 'autocomplete-rails' %>
 	<%= csrf_meta_tag %>
 	<%= yield(:head) %>
 </head>
 
 <body>
 	<div id="header">
-		party manager*
+		party manager
+		<%= render :partial => 'partials/side_nav' %>
 	</div>
-	<table border="0">
-		<tr>
-			<td>
-				<% if logged_in? %>
-				<%= render :partial => 'partials/side_nav' %>
-				<% else %>
-					<div id="side_nav">
-					</div>
-				<% end %>	
-			</td>
-			<td width="5">&nbsp;</td>
-			<td>
-				<div id="container">
-					<% flash.each do |name, msg| %>
-					<%= content_tag :div, msg, :id => "flash_#{name}" %>
-					<% end %>
-					<%= content_tag :h1, yield(:title) if show_title? %>
-					<%= yield %>
-				</div>
-			</td>
-		</tr>
-	</table>
+	
+	<div id="container">
+		<% flash.each do |name, msg| %>
+		<%= content_tag :div, msg, :id => "flash_#{name}" %>
+		<% end %>
+		<%= content_tag :h1, yield(:title) if show_title? %>
+		<%= yield %>
+	</div>
+
 	<%= render :partial => "partials/footer" %>
 
 </body>

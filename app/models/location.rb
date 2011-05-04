@@ -10,5 +10,17 @@ class Location < ActiveRecord::Base
 
   #Validations
   validates_format_of :zip, :with => /^\d{5}$/, :message => "should be five digits long", :allow_blank => true
+
+  def find_location_coordinates
+    str = self.street
+    town = self.city
+    st = self.state
+    coord = Geokit::Geocoders::GoogleGeocoder.geocode "#{str}, #{town}, #{st}"
+    if coord.success
+	    self.latitude, self.longitude = coord.ll.split(',')
+	  else 
+	    errors.add_to_base("Error with geocoding")
+	  end
+  end
   
 end

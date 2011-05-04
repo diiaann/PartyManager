@@ -1,11 +1,13 @@
 <% title "Gifts" %>
 
-<table>
+<table class="tbl">
+	<thead class="tbl">
   <tr>
     <th>Invitation</th>
     <th>Note Sent On</th>
     <th>Description</th>
   </tr>
+	<thead>
   <% for gift in @gifts %>
     <tr>
       <td><%= gift.invitation_id %></td>

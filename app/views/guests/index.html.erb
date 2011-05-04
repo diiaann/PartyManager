@@ -1,15 +1,15 @@
 <%# title "Guests" %>
 <h1>My Guests</h1>
-<table>
-  <tr>
+<table class ="tbl">
+	<thead class ="tbl">
     <th>Host</th>
     <th>Name</th>
     <th>Email</th>
     <th>Notes</th>
-  </tr>
+  </thead>
   <% for guest in @guests %>
     <tr>
-      <td><%= guest.host_id %></td>
+      <td><%= guest.host.first_name %> <%= guest.host.last_name %></td>
       <td><%= guest.name %></td>
       <td><%= guest.email %></td>
       <td><%= guest.notes %></td>

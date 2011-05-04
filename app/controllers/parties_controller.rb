@@ -4,7 +4,18 @@ class PartiesController < ApplicationController
     @parties = current_host.parties.all
     
   end
-
+  
+  
+  def email
+    @party = Party.find(params[:id])
+    for invite in current_host.invitations.all
+      if (@party.id == invite.party_id)
+        InvitationMailer.new_invitation_msg(invite).deliver
+      end
+    end
+  end
+  
+  
   def show
     @party = Party.find(params[:id])
     @current_guests = @party.guests.all

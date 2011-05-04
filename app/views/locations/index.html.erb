@@ -1,17 +1,17 @@
 <%# title "Locations" %>
 <h1>My Locations</h1>
-<table>
-  <tr>
+<table class="tbl">
+  <thead class = "tbl">
     <th>Host</th>
     <th>Name</th>
     <th>Street</th>
     <th>City</th>
     <th>State</th>
     <th>Zip</th>
-  </tr>
+  </thead>
   <% for location in @locations %>
     <tr>
-      <td><%= location.host_id %></td>
+      <td><%= location.host.first_name%> <%= location.host.last_name%></td>
       <td><%= location.name %></td>
       <td><%= location.street %></td>
       <td><%= location.city %></td>

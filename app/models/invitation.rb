@@ -18,4 +18,9 @@ class Invitation < ActiveRecord::Base
       self.invite_code = rand(36**16).to_s(36)
     end
   
+  def self.do_invite(code, guests)
+    invitation = find_by_invite_code(code)
+    self.actual_attendees = guests
+    return invitation
+  end
 end

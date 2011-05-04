@@ -47,13 +47,14 @@
 <p>
   <strong>Confirmed Attendance: </strong>
   <%= @party.confirmed %>
-</p>
-
+</p><%= image_tag @party.create_map_link%>
 
 <p>
   <%= link_to "Edit", edit_party_path(@party) %> |
   <%= link_to "Destroy", @party, :confirm => 'Are you sure?', :method => :delete %> |
   <%= link_to "View All", parties_path %>
+  <%= link_to "Email All Guests", email_path(@party), :confirm => 'Are you sure'%>
+
 </p>
 <%= render :partial => "current_guests" %>
 

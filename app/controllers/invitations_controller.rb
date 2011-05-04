@@ -15,6 +15,9 @@ class InvitationsController < ApplicationController
   def create
     @invitation = Invitation.new(params[:invitation])
     if @invitation.save
+      
+      #InvitationMailer.new_invitation_msg(@invitation).deliver
+      #flash[:notice] = "emailed invitation"
       redirect_to @invitation, :notice => "Invitation was successfully created."
     else
       render :action => 'new'

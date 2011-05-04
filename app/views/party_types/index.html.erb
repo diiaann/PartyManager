@@ -1,10 +1,10 @@
 <% title "Party Types" %>
 
-<table>
-  <tr>
+<table class ="tbl">
+	<thead class="tbl">
     <th>Name</th>
     <th>Active</th>
-  </tr>
+	</thead>
   <% for party_type in @party_types %>
     <tr>
       <td><%= party_type.name %></td>

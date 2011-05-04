@@ -1,6 +1,10 @@
 PartyManager::Application.routes.draw do
 
 
+  get "rsvp/start"
+
+  get "rsvp/form"
+
   get "home/index"
   get "home/about"
   get "home/contact"
@@ -21,6 +25,8 @@ PartyManager::Application.routes.draw do
   resources :sessions
   resources :hosts
   
+  match 'email/:id' => 'parties#email', :as => :email
+  match 'rsvp' => 'rsvp#start', :as => :rsvp
   match 'home' => 'home#index', :as => :home
   match 'about' => 'home#about', :as => :about
   match 'contact' => 'home#contact', :as => :contact

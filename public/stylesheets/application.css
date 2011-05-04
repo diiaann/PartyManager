@@ -1,52 +1,52 @@
 body {
-	background-color: #C4FF8A;
-	font-family: "Raleway-Thin",Verdana, Helvetica, Arial;
+	background-color: white;
+	font-family: "GillSans-Light",Verdana, Helvetica, Arial;
 	font-size: 12px;
 }
 #header{
-	height: 45px;
-	text-align: center;
-	font-family: "Raleway-Thin";
+	height: 80px;
+	margin: 10px;
+	font-family: "GillSans-Light",Verdana;
 	font-size: 30px;
 	font-color: #3165CA;
+}
+h1{
+	color: #B2124B;
+	font-weight: normal;
 }
 
 #wrap {
 	width: 30%;
 }
-
-#side_nav{
-	list-style-type: none;
-	width: 150px;
-}
-#side_nav ul{
+#nav{
 	list-style-type: none;
 }
-#side_nav a{
-	text-decoration: none;
-	font-color: #31E868;
+#nav li{
+	display: inline;
 }
-#side_nav a:link, #side_nav a:visited {
+#nav a{
 	text-decoration: none;
+	font-size: 12px;
+	color: #018FB2;
 }
-#side_nav a:hover{
-	text-decoration: none;
-	font-color: #31E868;
+#nav a:hover{
+	color: #B2124B;
 }
-#sude_nav li {
-	list-style-type: none;
-	font-color: #31E868;
+.block{
+	width: auto;
 }
 
-#side_nav ul li{
-	text-decoration: none;
-}
 a img {
 	border: none;
 }
 
-a {
-	color: #0000FF;
+#container a{
+	color: #B2124B;
+	text-transform: uppercase;
+}
+#container a:hover{
+	color: #018FB2;
+	text-transform: uppercase;
 }
 
 .clear {
@@ -56,9 +56,9 @@ a {
 }
 
 #container {
-	width: 600px;
+	width: 900px;
 	margin: 0 auto;
-	background-color: #FFF;
+	background-color: #D6FFFB;
 	padding: 20px 40px;
 	margin-top: 20px;
 	float: left;
@@ -112,8 +112,47 @@ a {
 }
 
 #footer {
-	margin:0;
+	clear: left;
+	margin-top: 50px;
 	padding:10px 15px 5px 15px;
-	text-align:center;
-	font-size: 93%;
+	font-size: 73%;
+}
+
+#footer a{
+	color: #B2124B;
+	text-transform: uppercase;
+}
+#footer a:hover{
+	color: #018FB2;
+	text-transform: uppercase;
+}
+
+
+table.tbl {   
+	font-size: 90%;
+	color: #000000;
+	text-align: left;
+}
+
+table.tbl a {
+	text-decoration: none;
+	color: #FF3A3B;
+}
+table.tbl a:hover {
+	color: #FF8400;
+}
+
+
+thead.tbl th {
+	font-size: 105%;
+	color: black;
+	background-color: #B2CFE8;
+	height: 28px;
+	font-weight: bold;
+	padding: 10px;
+}
+
+table.grid {
+	text-align: left;
+	border-collapse: collapse;
 }

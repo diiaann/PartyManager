@@ -1,7 +1,7 @@
 <%# title "Parties" %>
 <h1>My Parties</h1>
-<table>
-	<tr>
+<table class="tbl">
+	<thead class="tbl">
 		<th>Party Type</th>
 		<th>Host</th>
 		<th>Name</th>
@@ -12,7 +12,7 @@
 		<th>RSVPs</th>
 		<th>Expected</th>
 		<th>Confirmed</th>
-	</tr>
+	</thead>
 	<% for party in @parties %>
 	<tr>
 		<td><%= party.party_type.name %></td>
@@ -33,7 +33,6 @@
 		<td><%= link_to "Show", party %></td>
 		<td><%= link_to "Edit", edit_party_path(party) %></td>
 		<td><%= link_to "Destroy", party, :confirm => 'Are you sure?', :method => :delete %></td>
-
 	</tr>
 	<% end %>
 </table>
