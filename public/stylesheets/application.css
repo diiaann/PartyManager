@@ -1,3 +1,8 @@
+table.grid {
+	text-align: left;
+	border-collapse: collapse;
+}
+
 body {
 	background-color: white;
 	font-family: "GillSans-Light",Verdana, Helvetica, Arial;
@@ -23,6 +28,7 @@ h1{
 }
 #nav li{
 	display: inline;
+
 }
 #nav a{
 	text-decoration: none;
@@ -31,7 +37,7 @@ h1{
 }
 #nav a:hover{
 	color: #B2124B;
-}
+
 .block{
 	width: auto;
 }
@@ -156,3 +162,4 @@ table.grid {
 	text-align: left;
 	border-collapse: collapse;
 }
+

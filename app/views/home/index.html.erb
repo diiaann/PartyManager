@@ -4,6 +4,7 @@
 
 <%if current_host%>
 <h2>Welcome, <%="#{current_host.first_name}"%> <%="#{current_host.last_name}"%></h2>
+
 <% unless current_host.parties.all.empty? %>
 <table class ="tbl">
   <thead class ="tbl">

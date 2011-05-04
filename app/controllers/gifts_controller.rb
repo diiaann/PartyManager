@@ -1,17 +1,18 @@
 class GiftsController < ApplicationController
-  before_filter :login_required
-  
-
-  
+  before_filter :login_required  
   def index
     @gifts = currentGifts()
   end
-  
+  #Gets the current gifts for the logged in host
+  #Matches the inviations id of the current hosts since Ruby cannot do that my through relationships
   def currentGifts
     a = Array.new
+    @currInvites = current_host.invitations.all
     for gft in Gift.all
-      if (current_host.invitations.all.include?(gft.invitation_id))
-        a.push(gft)
+      for invt in @currInvites
+        if (invt.id==gft.invitation_id)
+          a.push(gft)
+        end
       end
     end
     return a
