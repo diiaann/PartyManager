@@ -9,4 +9,5 @@ Additionally, I did not have time to take care of the functionality for the admi
 
 :(
 
+You also intitially have an error because there are no hosts. I didnt always this problem.
 Lastly, I think when upgrading to Rails 3.07 I broke the delete functionality. I was told I needed to swap out the javascript files. It's unclear whether its doing the trick.
