@@ -1,26 +1,21 @@
 <h1>My Parties</h1>
+<p><%= link_to "Create Party", new_party_path, :class =>"btn large primary" %></p>
 <table class="tbl">
 	<thead class="tbl">
-		<th>Party Type</th>
-		<th>Host</th>
 		<th>Name</th>
 		<th>Location</th>
 		<th>Date</th>
 		<th>Time</th>
-		<th>Description</th>
 		<th>RSVPs</th>
 		<th>Expected</th>
 		<th>Confirmed</th>
 	</thead>
 	<% for party in @parties %>
 	<tr>
-		<td><%= party.party_type.name %></td>
-		<td><%= "#{party.host.first_name} #{party.host.last_name}" %></td>
-		<td><%= party.name %></td>
+		<td><%=link_to party.name, party_path(party) %></td>
 		<td><%= party.location.name %></td>
 		<td><%= party.party_date.strftime("%B %d, %Y") %></td>
 		<td><%= "#{party.start_time.strftime("%I:%M %p")} - #{party.end_time.strftime("%I:%M %p")}" %> </td>
-		<td><%= party.description %></td>
 		<td>
 			<% if (party.rsvp_date.nil?) %>
 			No RSVP required
@@ -36,4 +31,3 @@
 	<% end %>
 </table>
 
-<p><%= link_to "New Party", new_party_path %></p>

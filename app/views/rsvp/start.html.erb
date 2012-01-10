@@ -1,0 +1,12 @@
+<h1>Please Enter Your Invite Code:</h1>
+
+<%= form_tag rsvp_path do %>
+	<p><%= label_tag :code, "Invite Code"%>
+	<%= text_field_tag :code %>
+	</p>
+	<p>
+	<%= label_tag :attendees, "Confirmed Attendees"%>
+	<%= text_field_tag :code %>
+	</p>
+	<%= submit_tag 'Enter' %>
+<% end %>

@@ -1,0 +1,47 @@
+<p><%=@invitation.guest.name%>,</p>
+	<h1>You've been invited to <%=@invitation.party.name%></h1>
+	<h3>Party Information</h3>
+	 <% if (@invitation.party.description.nil?) %>
+	<p>
+	  <strong>Description:</strong>
+	  <%= @invitation.party.description %>
+	</p>
+	<%end%>
+	<p>
+	  <strong>Host:</strong>
+	  <%= "#{@invitation.party.host.first_name} #{@invitation.party.host.last_name}" %>
+	</p>
+	<p>
+	  <strong>Name:</strong>
+	  <%= @invitation.party.name %>
+	</p>
+	<p>
+	  <strong>Location:</strong>
+	  <%= @invitation.party.location.name %>
+	</p>
+	<p>
+	  <strong>Party Date:</strong>
+	  <%= @invitation.party.party_date.strftime("%B %d, %Y") %>
+	</p>
+
+	<p>
+	  <strong>Time:</strong>
+	  <%= "#{@invitation.party.start_time.strftime("%I:%M %p")} - #{@invitation.party.end_time.strftime("%I:%M %p")}"  %>
+	</p>
+	
+	<h3>Reservation Information</h3>
+	<p>
+		 <% if (@invitation.party.rsvp_date.nil?) %>
+		No RSVP required
+		<% else %>
+		Please reserve by: 
+		<%= @invitation.party.rsvp_date.strftime("%B %d, %Y") %></td>
+		<p>
+			<strong>Invite Code:</strong>
+				<%= @invitation.invite_code%>
+		</p>
+		<p><a href="http://localhost:3000/rsvp/start">Confirm your attendance</a></p>
+		<% end %>
+	</p>
+	
+	

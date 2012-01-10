@@ -1,0 +1,10 @@
+<h1>Email Confirmation</h1>
+<% if @current_invites.nil? %>
+<% else%>
+
+<% for invitation in @current_invites%>
+	<p><%=invitation.guest.name%></p>
+	<%=InvitationMailer.new_invitation_msg(invitation).deliver%>
+<%end%>
+<p>Emails sent!</p>
+<%end%>

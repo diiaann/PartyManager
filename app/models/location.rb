@@ -23,4 +23,9 @@ class Location < ActiveRecord::Base
 	  end
   end
   
+  def address
+    address = "" + self.street + "\n" + self.city + ", " + self.state + " " +self.zip
+    return address 
+  end
+  
 end

@@ -1,13 +1,4 @@
-Hello TA who is reading is,
-
-To be honest, I did not have a lot of time to work on this. I definitely tried my best.
-Also I didn't get my grade back for Phase until 2 days before this was due
-
 My invitation email sending function works, however I did not fully complete the same functionality for the gifts. I'm trying to get as much done before the due date.
 
 Additionally, I did not have time to take care of the functionality for the admin as well as write unit tests.
 
-:(
-
-You also intitially have an error because there are no hosts. I didnt always this problem.
-Lastly, I think when upgrading to Rails 3.07 I broke the delete functionality. I was told I needed to swap out the javascript files. It's unclear whether its doing the trick.

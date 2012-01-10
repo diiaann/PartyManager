@@ -2,18 +2,18 @@
 
 <table class ="tbl">
 	<thead class="tbl">
-    <th>Name</th>
-    <th>Active</th>
+		<th>Name</th>
+		<th>Active</th>
 	</thead>
-  <% for party_type in @party_types %>
+	<% for party_type in @party_types %>
 	<tr>
-      <td><%= party_type.name %></td>
-      <td><%= party_type.active %></td>
-      <td><%= link_to "Show", party_type %></td>
-      <td><%= link_to "Edit", edit_party_type_path(party_type) %></td>
-      <td><%= link_to "Destroy", party_type, :confirm => 'Are you sure?', :method => :delete %></td>
-    </tr>
-  <% end %>
+		<td><%= party_type.name %></td>
+		<td><%= party_type.active %></td>
+		<td><%= link_to "Show", party_type %></td>
+		<td><%= link_to "Edit", edit_party_type_path(party_type) %></td>
+		<td><%= link_to "Destroy", party_type, :confirm => 'Are you sure?', :method => :delete %></td>
+	</tr>
+	<% end %>
 </table>
 
 <p><%= link_to "New Party Type", new_party_type_path %></p>

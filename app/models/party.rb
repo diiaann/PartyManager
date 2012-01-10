@@ -22,7 +22,7 @@ class Party < ActiveRecord::Base
   :before_message => "Rsvp date must be on or before"
   
   
-  def create_map_link(zoom=13, width=800, height=800)
+  def create_map_link(zoom=13, width=240, height=240)
     self.location.find_location_coordinates
     markers = "";
     markers +=  "&markers=color:red%7Ccolor:red%7Clabel:#{name}%7C#{location.latitude},#{location.longitude}"

@@ -1,16 +1,8 @@
-<ul id="nav">
-		<%if current_host%>
-		<li class="block"><%= link_to "ACCOUNT", edit_host_path(current_host) %> </li>
-		<%end%>
-		<li class ="block"><%= link_to 'PARTIES', parties_path%></li>
-		<li class ="block"><%= link_to 'GUESTS', guests_path%></li>
-		<li class ="block"><%= link_to 'INVITATIONS', invitations_path%></li>
-		<li class ="block"><%= link_to 'LOCATIONS', locations_path%></li>
-		<li class ="block"><%= link_to 'PARTY TYPES', party_types_path%></li>
-		<li class ="block"><%= link_to 'GIFTS', gifts_path%></li>
-		<!-- can set this manually, or just use the named route 'logout' -->
-		<li>
-			<%# link_to 'Logout', { :controller => :sessions, :action => :destroy } %>
-			<%= link_to 'LOGOUT', logout_path %>
-		</li>
+<ul>
+		<li class ="block"><%= link_to 'Parties', parties_path%></li>
+		<li class ="block"><%= link_to 'Guests', guests_path%></li>
+		<li class ="block"><%= link_to 'Invitations', invitations_path%></li>
+		<li class ="block"><%= link_to 'Locations', locations_path%></li>
+		<li class ="block"><%= link_to 'Party Types', party_types_path%></li>
+		<li class ="block"><%= link_to 'Gifts', gifts_path%></li>
 </ul>

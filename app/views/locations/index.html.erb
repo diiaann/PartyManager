@@ -1,20 +1,13 @@
 <h1>My Locations</h1>
 <table class="tbl">
   <thead class = "tbl">
-    <th>Host</th>
     <th>Name</th>
-    <th>Street</th>
-    <th>City</th>
-    <th>State</th>
-    <th>Zip</th>
-  </thead>s
+ 	<th>Address</th>
+  </thead>
   <% for location in @locations %>
     <tr>
       <td><%= location.name %></td>
-      <td><%= location.street %></td>
-      <td><%= location.city %></td>
-      <td><%= location.state %></td>
-      <td><%= location.zip %></td>
+      <td><%= location.address %></td>
       <td><%= link_to "Show", location %></td>
       <td><%= link_to "Edit", edit_location_path(location) %></td>
       <td><%= link_to "Destroy", location, :confirm => 'Are you sure?', :method => :delete %></td>

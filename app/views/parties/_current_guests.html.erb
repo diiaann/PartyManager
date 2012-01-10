@@ -1,12 +1,14 @@
-<h2>Invited Guests</h2>
-	<table class="tbl">
-		<thead class="tbl">
-			<th>Name</th>
-			<th>Notes</th>
-		</thead>
-		<% for guest in @current_guests%>
-		<tr>
-			<td><%=guest.name%></td>
-		</tr>
-		<%end%>
-	</table>
+<h4>Invited Guests</h4>
+
+<table class="tbl">
+	<thead class="tbl">
+		<th>Name</th>
+		<th>Notes</th>
+	</thead>
+	<% for guest in @current_guests%>
+	<tr>
+		<td><%=guest.name%></td>
+		<td><%=guest.notes%></td>
+	</tr>
+	<%end%>
+</table>
